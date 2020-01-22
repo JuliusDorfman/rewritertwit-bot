@@ -7,7 +7,7 @@ import NavBar from "./components/Header/NavBar";
 const App = () => {
   return (
     <div>
-      <NavBar />
+      {/* <NavBar /> */}
       <Switch>
         <Route exact path="/Home" component={Home} />
         <Route exact path="/">

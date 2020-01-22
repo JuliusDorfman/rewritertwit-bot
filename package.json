@@ -31,7 +31,8 @@
     "nodemon": "^1.18.10",
     "should": "^13.2.3",
     "supertest": "^4.0.2",
-    "twit": "^2.2.11"
+    "twit": "^2.2.11",
+    "whatwg-fetch": "^3.0.0"
   },
   "homepage": "https://github.com/UFWebApps/React_Template_Repo#readme"
 }

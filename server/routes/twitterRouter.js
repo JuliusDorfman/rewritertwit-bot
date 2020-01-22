@@ -19,8 +19,8 @@ router.route('/posttweet')
 
 // ROUTE /api/twitterAPI/deleteTweet
 // ACCESS: PUBLIC
-router.route('/deletetweet')
-  .get(controller.deleteTweet);
+router.route('/deletetweet/:id')
+  .delete(controller.deleteTweet);
 
 
 module.exports = router;

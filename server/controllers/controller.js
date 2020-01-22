@@ -37,7 +37,7 @@ exports.postTweet = (req, res, next) => {
 // exports.putTweet()
 
 exports.deleteTweet = (req, res, next) => {
-  console.log('ROUTE: /api/twitterAPI/deleteTweet/:id, {DELETE}')
+  console.log('ROUTE: /api/twitterAPI/deletetweet/:id, {DELETE}')
   Tweet.findOneAndDelete({
       _id: req.params.id
     })
