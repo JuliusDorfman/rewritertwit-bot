@@ -18,7 +18,7 @@ const NavBar = () => {
                     React Docs
                 </a>
                 <a className = "nav-link" target="_blank" rel="noopener noreferrer" href="https://reactjs.org/tutorial/tutorial.html">React Tutorial</a>
-                <a className = "nav-link" target="_blank" rel="noopener norefferer" href="https://nodejs.org/en/docs/">Node Docs</a>
+                <a className = "nav-link" target="_blank" rel="noopener noreferrer" href="https://nodejs.org/en/docs/">Node Docs</a>
             </div>
 
         </div>

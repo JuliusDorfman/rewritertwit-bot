@@ -3,8 +3,8 @@ const path = require('path'),
     mongoose = require('mongoose'),
     morgan = require('morgan'),
     bodyParser = require('body-parser'),
-    // exampleRouter = require('../routes/examples.server.routes');
-    twitterRouter = require('../routes/twitterRouter.js');;
+    twitterRouter = require('../routes/twitterRouter.js'),
+    startTwitterStream = require('../services/twitter/bot');
 
 module.exports.init = () => {
     /* 
@@ -13,7 +13,9 @@ module.exports.init = () => {
     */
     mongoose.connect(process.env.DB_URI || require('./config').db.uri, {
         useNewUrlParser: true
-    });
+    }).then(() => {
+        startTwitterStream.startStream();
+    })
     mongoose.set('useCreateIndex', true);
     mongoose.set('useFindAndModify', false);
 
@@ -27,7 +29,6 @@ module.exports.init = () => {
     app.use(bodyParser.json());
 
     // add a router
-    // app.use('/api/example', exampleRouter);
     app.use('/api/twitterAPI', twitterRouter);
 
     if (process.env.NODE_ENV === 'production') {
