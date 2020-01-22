@@ -1,9 +1,7 @@
 .header {
-    background: #282c34;
-    display: flex;
+    background: #1a91da;
     flex-direction: row;
     justify-content: flex-start;
-    padding: 1%;
 }
 
 .nav-logo {
