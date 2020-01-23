@@ -1,5 +1,14 @@
+ul {
+    margin-top: 0;
+  }
+
 html, body {
-    margin: 0!important;
+    margin: 0;
+}
+
+body {
+    margin-left: 10vw;
+    margin-right: 10vw;
 }
 
 .App {
@@ -24,4 +33,12 @@ html, body {
 
 .App-link {
     color: #09d3ac;
+}
+
+.tweet-line {
+    padding: 0;
+}
+
+.tweet-line li{
+    list-style: none;
 }

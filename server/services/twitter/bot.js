@@ -5,7 +5,7 @@ const TwitterStream = new twit(config.streamingMethod());
 const DictionaryConfig = config.dictionaryMethod();
 const Tweet = require('../../models/Tweet');
 const axios = require('axios');
-
+const moment = require('moment');
 
 //TODO: PUNCTUATION IS NOT APPEARING PROPERLY
 //MAKE TWEETS REPLIES RATHER THAN STATUS UPDATES
@@ -54,10 +54,8 @@ function startStream() {
     let name = tweet.user.screen_name;
 
 
-    // 
-    //This will log entire tweet response by twit api
-    //
-    // console.log("FULL TWEET: ", tweet)
+    //This will log entire tweet response
+    console.log("FULL TWEET: ", tweet)
 
     let tweetModel = new Tweet({
       text: tweetText,
@@ -65,7 +63,24 @@ function startStream() {
       user: tweetUser
     });
 
-    console.log("TWEET CAME IN: ", tweetText);
+
+    //LOOKING FOR EXTENDED TWEET
+    // console.log("TWEET CAME IN: \n", tweetText);
+    // console.log('\nTRUNCATED: ', tweet.truncated);
+
+    // if (tweet.truncated) {
+    //   console.log('EXTENDED TWEET: ', tweet.user.extended_tweet.full_text);
+    // } else {
+    //   console.log("NOT TRUNCATED")
+    // }
+
+    // if (tweet.retweeted_status.extended_tweet.truncated) {
+    // console.log("\n\nEXTENDED TWEET\n\n", tweet.retweeted_status.extended_tweet.full_text);
+    // } else {
+    //   console.log('not a retweet')
+    // }
+    //LOOKING FOR EXTENDED TWEET
+
 
     // Capture 4 tweets every 15 minutes
     tweetCount++
@@ -115,8 +130,9 @@ function startStream() {
       axios.all(axiosArray)
         .then(axios.spread((...responses) => {
           tweetModel.alteredText = rewrittenArray.join(' ');
-          let cutIndex = tweetDate.indexOf('+');
-          tweetModel.created = tweetDate.substring(0, cutIndex - 1);
+          // let cutIndex = tweetDate.indexOf('+');
+          // tweetModel.created = tweetDate.substring(0, cutIndex - 1);
+          tweetModel.created = moment().format("MMM Do YYYY, h:mm:ssa");
           tweetModel.tweetID = tweetID;
           if (rewrittenArray !== tweetText) {
             //

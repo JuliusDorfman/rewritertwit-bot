@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './Home.css';
 import 'whatwg-fetch';
 // import axios from 'axios';
 
@@ -9,7 +10,8 @@ class Home extends Component {
         super(props);
 
         this.state = {
-            tweets: []
+            tweets: [],
+            isButtonDisabled: false
         };
 
         // this.newTweet = this.newTweet.bind(this);
@@ -17,6 +19,7 @@ class Home extends Component {
         this.deleteTweet = this.deleteTweet.bind(this);
         // this.addTestTweet = this.addTestTweet.bind(this);
         this.updateTweets = this.updateTweets.bind(this);
+        this.disableButton = this.disableButton.bind(this);
         // this._modifyTweet = this._modifyTweet.bind(this);
     }
 
@@ -28,6 +31,13 @@ class Home extends Component {
                     tweets: json
                 });
             });
+    }
+
+    disableButton() {
+        this.setState({isButtonDisabled: true})
+        setTimeout(() => {
+            this.setState({isButtonDisabled: false});
+        }, 3000)
     }
 
     // addTestTweet() {
@@ -102,12 +112,10 @@ class Home extends Component {
     render() {
         return (
             <>
-                <h1>Welcome to the Eloquent Twitter Stream</h1>
-                <h2>by ReWriter, Twit</h2>
-                <h4>I rewrite and transform your borderline inarticulate Tweets into something beautiful.</h4>
-                <p>Tweets:</p>
-                <button onClick={() => this.updateTweets()}>Update Tweets</button>
-                <ul>
+                <button 
+                disabled={this.stateisButtonDisabled}
+                onClick={() => {this.updateTweets(); this.disableButton()}}>Update</button>
+                <ul className='tweet-line'>
                     {this.state.tweets.map((tweets, i) => (
                         <li key={i}>
                             <p>{`"${tweets.text}"`} </p>
