@@ -45,7 +45,8 @@ function startStream() {
   // let escapedChars = RegExp(/[@#$%&*\'\"\`\]\?\’\…]/);
   let escapedChars = RegExp(/[@#$%&*\'\"\`\]\?\’]/);
   let capitalizedChars = RegExp(/[A-Z]/);
-  let escapedImages = RegExp(/http/)
+  let escapedImages = RegExp(/http/);
+  let retweetedCharacters = RegExp(/RT\s@[a-zA-Z]+:/);
   stream.on('tweet', function(tweet) {
     let tweetText = tweet.text;
     let tweetUser = tweet.user.screen_name;

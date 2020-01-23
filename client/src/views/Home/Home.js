@@ -3,7 +3,9 @@ import './Home.css';
 import 'whatwg-fetch';
 // import axios from 'axios';
 
-// TODO: Tweets that are captured by stream now populate the View.
+//TODO: stop truncating tweets.
+//TODO: paginate front page. staggard card view.
+//TODO: visual button queue
 
 class Home extends Component {
     constructor(props) {
@@ -126,13 +128,23 @@ class Home extends Component {
                                 <p className='tweet-date'>{tweets.created}</p>
                             </div>
                             <div className='twit-container'>
-                                <div className='twit-photo-wrapper'>
-                                    <img src="/assets/images/twitphoto-medium.png" alt="twit-rewriter-photo" />
-                                </div>
                                 <div className='twit-content-wrapper'>
                                     <p className='twit-text'>{`"${tweets.alteredText}"`}</p>
-                                    <p className='twit-username'>- ReWriter, Twit</p>
-                                    <button onClick={() => this.deleteTweet(i)}>Delete</button>
+                                    <div className='twit-signature'>
+                                        <div className='twit-photo-wrapper'>
+                                            <img src="/assets/images/twitphoto-medium.png" alt="twit-rewriter-photo" />
+                                        </div>
+                                        <p className='twit-username'>- ReWriter, Twit</p>
+                                    </div>
+                                    <button
+                                    style={{
+                                        background: "transparent",
+                                        color: "white",
+                                        border: "none"
+                                    }}
+
+                                        onClick={() => this.deleteTweet(i)}>Delete
+                                    </button>
                                 </div>
                             </div>
                             <hr />

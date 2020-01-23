@@ -45,15 +45,24 @@ body {
 /* 
 Timeline Styles
 */
+
 .tweet-line {
     padding: 0;
 }
 
 .tweet-line li {
+    display: flex;
     list-style: none;
 }
 
+.user-container {
+    width: 50%;
+    font-family: 'Zilla Slab', serif;
+}
+
 .twit-container {
+    width: 50%;
+    margin-top: 5%;
     display: flex;
 }
 
@@ -64,16 +73,32 @@ Timeline Styles
 
 img {
     height: 45px;
+    border-radius: 50%;
+}
+
+.twit-content-wrapper {
+    width: 100%;
 }
 
 .twit-text {
-    padding-left: 5%;
+    padding-left: 3%;
     font-size: 20px;
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Kurale', serif;
+}
+
+
+.twit-signature {
+    display: flex;
+    flex-direction: row;
+    padding-left: 3%;
 }
 
 .twit-username {
-    padding-left: 5%;
+    padding-left: 3%;
+    font-family: 'Parisienne', cursive;
+    font-size: 30px;
+    margin: 0;
+    width: 100%;
 }
 
 hr {
