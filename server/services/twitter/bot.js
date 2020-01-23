@@ -97,7 +97,7 @@ function startStream() {
         let word = tweetTextArray[i];
         let thesaurusURL = `https://www.dictionaryapi.com/api/v3/references/thesaurus/json/${word}?key=${DictionaryConfig.thesaurus_key}`
 
-        if ((word.length >= 5 && escapedChars.test(word) === false && word[0] !== '@')) {
+        if ((word.length >= 4 && escapedChars.test(word) === false && word[0] !== '@')) {
           if (!capitalizedChars.test(word[0])) {
             let newPromise = axios({
                 method: 'get',

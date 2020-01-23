@@ -1,20 +1,27 @@
 ul {
     margin-top: 0;
-  }
+}
 
-html, body {
+html,
+body {
     margin: 0;
 }
 
 body {
-    margin-left: 10vw;
-    margin-right: 10vw;
+    margin-left: 7vw;
+    margin-right: 7vw;
+    padding-left: 3vw;
+    padding-right: 3vw;
+    border-left: 1px solid gainsboro;
+    border-right: 1px solid gainsboro;
+    border-top: 1px solid gainsboro;
 }
 
 .App {
     text-align: center;
     background: #282c34;
 }
+
 /* 
 .App-logo {
     height: 40vmin;
@@ -35,10 +42,55 @@ body {
     color: #09d3ac;
 }
 
+/* 
+Timeline Styles
+*/
 .tweet-line {
     padding: 0;
 }
 
-.tweet-line li{
+.tweet-line li {
     list-style: none;
+}
+
+.twit-container {
+    display: flex;
+}
+
+.twit-photo-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+img {
+    height: 45px;
+}
+
+.twit-text {
+    padding-left: 5%;
+    font-size: 20px;
+    font-family: 'Cormorant Garamond', serif;
+}
+
+.twit-username {
+    padding-left: 5%;
+}
+
+hr {
+    position: absolute;
+    left: 7vw;
+    width: 84.6vw;
+    border-top: gainsboro;
+    border-color: gainsboro;
+}
+
+/* Button Styles */
+
+.update-tweets-button {
+    /* margin: 40px 0 40px 80px; */
+    width: 125px;
+    height: 50px;
+    background: #E8F5FE;
+    border: none;
+    border-radius: 30px;
 }

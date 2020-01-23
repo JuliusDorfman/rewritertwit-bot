@@ -34,9 +34,9 @@ class Home extends Component {
     }
 
     disableButton() {
-        this.setState({isButtonDisabled: true})
+        this.setState({ isButtonDisabled: true })
         setTimeout(() => {
-            this.setState({isButtonDisabled: false});
+            this.setState({ isButtonDisabled: false });
         }, 3000)
     }
 
@@ -112,19 +112,31 @@ class Home extends Component {
     render() {
         return (
             <>
-                <button 
-                disabled={this.stateisButtonDisabled}
-                onClick={() => {this.updateTweets(); this.disableButton()}}>Update</button>
+                <button
+                    className='update-tweets-button'
+                    disabled={this.stateisButtonDisabled}
+                    onClick={() => { this.updateTweets(); this.disableButton() }}>Update</button>
+                <hr />
                 <ul className='tweet-line'>
                     {this.state.tweets.map((tweets, i) => (
                         <li key={i}>
-                            <p>{`"${tweets.text}"`} </p>
-                            <p>{`- ${tweets.user}`}</p>
-                            <p>{tweets.created}</p>
-                            <p>{`"${tweets.alteredText}"`}</p>
-                            <p>- ReWriter, Twit</p>
+                            <div className='user-container'>
+                                <p className='user-text'>{`"${tweets.text}"`} </p>
+                                <p className='user-username'>{`- ${tweets.user}`}</p>
+                                <p className='tweet-date'>{tweets.created}</p>
+                            </div>
+                            <div className='twit-container'>
+                                <div className='twit-photo-wrapper'>
+                                    <img src="/assets/images/twitphoto-medium.png" alt="twit-rewriter-photo" />
+                                </div>
+                                <div className='twit-content-wrapper'>
+                                    <p className='twit-text'>{`"${tweets.alteredText}"`}</p>
+                                    <p className='twit-username'>- ReWriter, Twit</p>
+                                    <button onClick={() => this.deleteTweet(i)}>Delete</button>
+                                </div>
+                            </div>
+                            <hr />
                             {/* <button onClick={() => this.addTestTweet(i)}>TestAddTweet</button> */}
-                            <button onClick={() => this.deleteTweet(i)}>Delete</button>
                             {/* <button onClick={() => this.hideTweet(i)}>Hide</button>  */}
                         </li>
                     ))}
