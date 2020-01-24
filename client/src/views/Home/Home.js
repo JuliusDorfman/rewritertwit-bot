@@ -6,7 +6,7 @@ import 'whatwg-fetch';
 //TODO: stop truncating tweets.
 //TODO: paginate front page. staggard card view.
 //TODO: visual button queue
-
+//TODO: MATERICAL DESIGN DEPRESSED ORIGINAL TWEET: RAISED RWRITTEN TWEET BORDERS TO CONVAY 
 class Home extends Component {
     constructor(props) {
         super(props);
@@ -41,20 +41,6 @@ class Home extends Component {
             this.setState({ isButtonDisabled: false });
         }, 3000)
     }
-
-    // addTestTweet() {
-    //   fetch('/api/twitterAPI/', { method: 'POST' })
-    //     .then(res => res.json())
-    //     .then(json => {
-    //       let data = this.state.tweets;
-    //       data.push(json);
-
-    //       this.setState({
-    //         tweets: data
-    //       })
-    //     })
-    // }
-
     updateTweets() {
         fetch('/api/twitterAPI', { method: 'GET' })
             .then(res => res.json())
@@ -64,29 +50,7 @@ class Home extends Component {
                 });
             });
     }
-
-    // newTweet() {
-    //   fetch('/api/twitterAPI', { method: 'POST' })
-    //     .then(res => res.json())
-    //     .then(json => {
-    //       let data = this.state.tweets;
-    //       data.push(json);
-
-    //       this.setState({
-    //         tweets: data
-    //       });
-    //     });
-    // }
-
-    // hideTweet(index) {
-    //   const id = this.state.tweets[index]._id;
-
-    //   fetch(`/api/twitterAPI/${id}`, { method: 'DELETE' })
-    //     .then(_ => {
-    //       this._modifyTweet(index, null);
-    //     });
-    // }
-
+    
     deleteTweet(index) {
         const id = this.state.tweets[index]._id;
 
@@ -111,6 +75,41 @@ class Home extends Component {
         });
     }
 
+   // addTestTweet() {
+    //   fetch('/api/twitterAPI/', { method: 'POST' })
+    //     .then(res => res.json())
+    //     .then(json => {
+    //       let data = this.state.tweets;
+    //       data.push(json);
+
+    //       this.setState({
+    //         tweets: data
+    //       })
+    //     })
+    // }
+
+    // newTweet() {
+    //   fetch('/api/twitterAPI', { method: 'POST' })
+    //     .then(res => res.json())
+    //     .then(json => {
+    //       let data = this.state.tweets;
+    //       data.push(json);
+
+    //       this.setState({
+    //         tweets: data
+    //       });
+    //     });
+    // }
+
+    // hideTweet(index) {
+    //   const id = this.state.tweets[index]._id;
+
+    //   fetch(`/api/twitterAPI/${id}`, { method: 'DELETE' })
+    //     .then(_ => {
+    //       this._modifyTweet(index, null);
+    //     });
+    // }
+
     render() {
         return (
             <>
@@ -124,7 +123,7 @@ class Home extends Component {
                         <li key={i}>
                             <div className='user-container'>
                                 <p className='user-text'>{`"${tweets.text}"`} </p>
-                                <p className='user-username'>{`@${tweets.user}`}</p>
+                                <p className='user-username'>{`- @${tweets.user}`}</p>
                                 <p className='tweet-date'>{tweets.created}</p>
                             </div>
                             <div className='twit-container'>
@@ -136,15 +135,7 @@ class Home extends Component {
                                         </div>
                                         <p className='twit-username'>- ReWriter, Twit</p>
                                     </div>
-                                    <button
-                                    style={{
-                                        background: "transparent",
-                                        color: "white",
-                                        border: "none"
-                                    }}
-
-                                        onClick={() => this.deleteTweet(i)}>Delete
-                                    </button>
+                                    <button className='dont-bother' onClick={() => this.deleteTweet(i)}>Delete</button>
                                 </div>
                             </div>
                             <hr />

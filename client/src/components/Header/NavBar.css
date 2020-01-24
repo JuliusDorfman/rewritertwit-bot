@@ -1,25 +1,40 @@
 .header {
-    /* background: #1A91DA; */
-    flex-direction: row;
-    justify-content: flex-start;
+    position: relative;
 }
 
+.header a {
+    color: #0e1111;
+}
+
+.header a:hover {
+    color: white;
+}
+
+/* 
+Navbar Styles
+*/
+
 .nav-logo {
-    display:flex;
+    display: flex;
     height: 50px;
     width: 50px;
     padding: 10%;
 }
 
-.nav-logo:hover {
-
+.nav-items {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.nav-items {
-    display:flex;
-    margin-left: auto;
-    margin-right: 5%;
-    align-items: center;
+.call-to-action {
+    margin: 0 0 20% 0;
+    font-size: 25px;
+    font-weight: bold;
+    color: #55ACEE;
 }
 
 .nav-link {
@@ -34,3 +49,30 @@
     background-color: #08bd9a;
 }
 
+button {
+    /* margin: 40px 0 40px 80px; */
+    width: 125px;
+    height: 100px;
+    background: #F5F8FA;
+    border: 3px solid #55ACEE;
+    border-radius: 30px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #55ACEE;
+    transition: linear .2s;
+}
+
+button:hover {
+    background: #55ACEE;
+    color: ghostwhite;
+    transition: linear .2s;
+    cursor: pointer;
+}
+/* 
+Icon Styles
+*/
+
+.fa-twitter {
+    color: #55ACEE;
+    font-size: xx-large;
+}

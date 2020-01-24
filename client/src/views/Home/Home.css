@@ -64,9 +64,14 @@ Timeline Styles
     font-family: 'Zilla Slab', serif;
 }
 
+.user-text {
+    padding-top: 3%;
+}
+
 .tweet-date {
     position: absolute;
     bottom: 0px;
+    padding-bottom: 3%;
 }
 
 .twit-container {
@@ -87,7 +92,7 @@ img {
 
 .twit-content-wrapper {
     width: 100%;
-    padding-top: 10%;
+    padding-top: 5%;
 }
 
 .twit-text {
@@ -124,9 +129,34 @@ hr {
     /* margin: 40px 0 40px 80px; */
     width: 125px;
     height: 50px;
-    background: #E8F5FE;
-    border: none;
+    background: transparent;
+    border: 3px solid #55ACEE;
     border-radius: 30px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #55ACEE;
+    transition: linear .2s;
+}
+
+.update-tweets-button:hover {
+    background: #55ACEE;
+    color: ghostwhite;
+    transition: linear .2s;
+    cursor: pointer;
+}
+
+button.dont-bother {
+    background: transparent;
+    color: white;
+    border: none;
+    height: 50px;
+}
+
+button.dont-bother:hover {
+    background: transparent;
+    color: white;
+    border: none;
+    height: 50px;
 }
 
 @media (max-width: 700px) {
@@ -151,7 +181,7 @@ hr {
     .twit-container {
         width: 100%;
     }
-    
+
     .twit-content-wrapper {
         padding-top: 3%;
     }
