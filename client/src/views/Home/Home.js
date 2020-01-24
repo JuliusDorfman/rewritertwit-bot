@@ -50,7 +50,7 @@ class Home extends Component {
                 });
             });
     }
-    
+
     deleteTweet(index) {
         const id = this.state.tweets[index]._id;
 
@@ -75,7 +75,7 @@ class Home extends Component {
         });
     }
 
-   // addTestTweet() {
+    // addTestTweet() {
     //   fetch('/api/twitterAPI/', { method: 'POST' })
     //     .then(res => res.json())
     //     .then(json => {
@@ -113,32 +113,34 @@ class Home extends Component {
     render() {
         return (
             <>
-                <button
+                {/* <button
                     className='update-tweets-button'
                     disabled={this.stateisButtonDisabled}
-                    onClick={() => { this.updateTweets(); this.disableButton() }}>Update</button>
-                <hr />
+                    onClick={() => { this.updateTweets(); this.disableButton() }}>Update</button> */}
                 <ul className='tweet-line'>
                     {this.state.tweets.map((tweets, i) => (
                         <li key={i}>
                             <div className='user-container'>
-                                <p className='user-text'>{`"${tweets.text}"`} </p>
-                                <p className='user-username'>{`- @${tweets.user}`}</p>
-                                <p className='tweet-date'>{tweets.created}</p>
+                                <div className="user-content-wrapper">
+                                    <div>
+                                        <span className='user-username'>{`${tweets.user}`}</span>&nbsp;<a href={`https://twitter.com/${tweets.user}`} className="user-handle">{`@${tweets.user}`}</a>
+                                    </div>
+                                    <p className='user-text'>{`"${tweets.text}"`} </p>
+                                </div>
                             </div>
                             <div className='twit-container'>
                                 <div className='twit-content-wrapper'>
-                                    <p className='twit-text'>{`"${tweets.alteredText}"`}</p>
-                                    <div className='twit-signature'>
-                                        <div className='twit-photo-wrapper'>
-                                            <img src="/assets/images/twitphoto-medium.png" alt="twit-rewriter-photo" />
-                                        </div>
-                                        <p className='twit-username'>- ReWriter, Twit</p>
+                                    <div className="profile-container">
+                                        <img src="/assets/images/twitphoto-medium.png" alt="twit-rewriter-photo" />
+                                    </div>
+                                    <div className="tweet-container">
+                                        <div><span className="twit-username">twit-rewriter</span>&nbsp;<span className="handle">@RewriterTwit</span></div>
+                                        <div className="replying-to">replying to <a href={`https://twitter.com/${tweets.user}`}>{`- @${tweets.user}`}</a></div>
+                                        <div className='twit-text'>{`"${tweets.alteredText}"`}</div>
                                     </div>
                                     <button className='dont-bother' onClick={() => this.deleteTweet(i)}>Delete</button>
                                 </div>
                             </div>
-                            <hr />
                             {/* <button onClick={() => this.addTestTweet(i)}>TestAddTweet</button> */}
                             {/* <button onClick={() => this.hideTweet(i)}>Hide</button>  */}
                         </li>

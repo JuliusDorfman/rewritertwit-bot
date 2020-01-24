@@ -8,10 +8,10 @@ body {
 }
 
 body {
-    margin-left: 7vw;
-    margin-right: 7vw;
-    padding-left: 3vw;
-    padding-right: 3vw;
+    margin-left: 12vw;
+    margin-right: 12vw;
+    /* padding-left: 3vw; */
+    /* padding-right: 3vw; */
     border-left: 1px solid gainsboro;
     border-right: 1px solid gainsboro;
     border-top: 1px solid gainsboro;
@@ -53,31 +53,64 @@ Timeline Styles
 .tweet-line li {
     display: flex;
     justify-content: space-between;
-    min-height: 40vh;
+    min-height: 120px;
     list-style: none;
+    border-bottom: 1px solid gainsboro;
+    transition: .2s;
+    padding: 4%;
+}
+
+.tweet-line li:hover {
+    background: #F5F8FA;
+    transition: ease-in-out .2s;
+}
+
+.replying-to a {
+    color: #1B95E0;
+    text-decoration: none;
+
+}
+
+.handle {
+    font-size: 14px;
 }
 
 .user-container {
-    position: relative;
     width: 45%;
-    padding-top: 2%;
-    font-family: 'Zilla Slab', serif;
+    display: flex;
+    font-family: 'Roboto', sans-serif;
+}
+
+.user-content-wrapper {
+    width: 100%;
+    /* padding: 7%; */
 }
 
 .user-text {
-    padding-top: 3%;
+    font-size: 14px;
+    color: #3b444b;
+    /* padding-top: 3%; */
+}
+
+.user-username {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.user-handle {
+    text-decoration: none;
+    color: #1B95E0;
 }
 
 .tweet-date {
-    position: absolute;
+    /* position: absolute;
     bottom: 0px;
-    padding-bottom: 3%;
+    padding-bottom: 3%; */
 }
 
 .twit-container {
-    width: 45%;
+    width: 52%;
     display: flex;
-    align-items: center;
 }
 
 .twit-photo-wrapper {
@@ -85,20 +118,36 @@ Timeline Styles
     align-items: center;
 }
 
-img {
+.profile-container img {
     height: 45px;
     border-radius: 50%;
 }
 
 .twit-content-wrapper {
     width: 100%;
-    padding-top: 5%;
+    /* padding: 5% 5% 5% 5%; */
+    display: flex;
+}
+
+.profile-container {
+    flex: 0 0 60px;
+}
+
+.profile-container img {
+    width: 50px;
+    height: 50px;
+    margin: 0 5px;
+}
+
+.tweet-container {
+    font-family: 'Roboto', sans-serif;
 }
 
 .twit-text {
-    padding-left: 3%;
-    font-size: 20px;
-    font-family: 'Kurale', serif;
+    padding: 5% 5% 5% 0;
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+    color: #3b444b;
 }
 
 .twit-signature {
@@ -108,11 +157,8 @@ img {
 }
 
 .twit-username {
-    padding-left: 3%;
-    font-family: 'Parisienne', cursive;
-    font-size: 30px;
-    margin: 0;
-    width: 100%;
+    font-weight: bold;
+    font-size: 18px;
 }
 
 hr {

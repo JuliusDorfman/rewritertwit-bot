@@ -9,14 +9,21 @@ const NavBar = () => {
             {/* <Link className = "nav-title" to="/">
                 <img className = "nav-logo" src={ "/logo192.png" } alt="React logo" />
             </Link> */}
-            <div className='welcome-banner'>
-                <h1> The Eloquent Twitter Stream</h1>
-                <h2>by ReWriter, Twit</h2>
-                <h4>I rewrite and transform your borderline inarticulate Tweets into something beautiful.</h4>
+            <div className="header-content">
+
+                <div className="profile-picture-wrapper">
+                    <img className='profile-picture' src="/assets/images/twitphoto-large.png" alt="twit-rewriter-photo" />
+                </div>
+
+                <div className='welcome-banner'>
+                    <p className='banner-username'>twit-rewriter</p>
+                    <p className='banner-handle'><a href='https://twitter.com/RewriterTwit'>@ReWriter-Twit</a></p>
+                    <p className='banner-bio'>I rewrite and transform your borderline inarticulate Tweets into something beautiful.</p>
+                </div>
             </div>
             {/* Page Links */}
             <div className="nav-items">
-            <a href="https://twitter.com/RewriterTwit"><p className='call-to-action'><i class="fa fa-twitter"></i></p></a>
+                <a href="https://twitter.com/RewriterTwit"><p className='call-to-action'><i class="fa fa-twitter"></i></p></a>
                 <a href="https://twitter.com/intent/tweet?screen_name=rewriter-twit%20ref_src=twsrc%5Etfw" class="twitter-mention-button" data-show-count="false"><button>@ me! <br /> I always respond!</button>
                 </a>
 

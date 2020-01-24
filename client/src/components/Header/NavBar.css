@@ -1,5 +1,19 @@
 .header {
     position: relative;
+    display: flex;
+    min-height: 40vh;
+    background: linear-gradient(#CCD6DD 60%, white 40%);
+    font-family: 'Roboto', sans-serif;
+    border-bottom: 1px solid gainsboro;
+}
+
+.header p {
+    margin: 2% 2% 2% 6%;
+}
+
+.header .banner-username {
+    font-weight: bolder;
+    font-size: 50px;
 }
 
 .header a {
@@ -8,6 +22,36 @@
 
 .header a:hover {
     color: white;
+}
+
+.header-content {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    padding-bottom: 5%;
+    padding-left: 7%;
+}
+
+.banner-handle a{
+    color: #1B95E0;
+    font-weight: bold;
+    font-size: 19px;
+    letter-spacing: 4px;
+    text-decoration: none;
+}
+
+.banner-handle a:hover {
+    color: #1B95E0;
+    text-decoration: underline;
+}
+
+.profile-picture-wrapper {
+}
+
+.profile-picture-wrapper img{
+    height: 150px;
+    border-radius: 50%;
 }
 
 /* 
