@@ -124,7 +124,7 @@ class Home extends Component {
                         <li key={i}>
                             <div className='user-container'>
                                 <p className='user-text'>{`"${tweets.text}"`} </p>
-                                <p className='user-username'>{`- ${tweets.user}`}</p>
+                                <p className='user-username'>{`@${tweets.user}`}</p>
                                 <p className='tweet-date'>{tweets.created}</p>
                             </div>
                             <div className='twit-container'>

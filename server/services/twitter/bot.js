@@ -46,6 +46,7 @@ function startStream() {
   let escapedChars = RegExp(/[@#$%&*\'\"\`\]\?\’]/);
   let capitalizedChars = RegExp(/[A-Z]/);
   let escapedImages = RegExp(/http/);
+  //TODO: DO NOT REPOST /RT\s[a-zA-Z]+:/
   let retweetedCharacters = RegExp(/RT\s@[a-zA-Z]+:/);
   stream.on('tweet', function(tweet) {
     let tweetText = tweet.text;

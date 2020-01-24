@@ -52,18 +52,27 @@ Timeline Styles
 
 .tweet-line li {
     display: flex;
+    justify-content: space-between;
+    min-height: 40vh;
     list-style: none;
 }
 
 .user-container {
-    width: 50%;
+    position: relative;
+    width: 45%;
+    padding-top: 2%;
     font-family: 'Zilla Slab', serif;
 }
 
+.tweet-date {
+    position: absolute;
+    bottom: 0px;
+}
+
 .twit-container {
-    width: 50%;
-    margin-top: 5%;
+    width: 45%;
     display: flex;
+    align-items: center;
 }
 
 .twit-photo-wrapper {
@@ -78,6 +87,7 @@ img {
 
 .twit-content-wrapper {
     width: 100%;
+    padding-top: 10%;
 }
 
 .twit-text {
@@ -85,7 +95,6 @@ img {
     font-size: 20px;
     font-family: 'Kurale', serif;
 }
-
 
 .twit-signature {
     display: flex;
@@ -118,4 +127,36 @@ hr {
     background: #E8F5FE;
     border: none;
     border-radius: 30px;
+}
+
+@media (max-width: 700px) {
+    .user-container {
+        padding-top: 9%;
+    }
+
+    .tweet-line li {
+        flex-direction: column;
+    }
+
+    .user-container {
+        padding-top: 11%;
+        width: 100%;
+    }
+
+    .tweet-date {
+        top: 0px;
+        font-size: smaller;
+    }
+
+    .twit-container {
+        width: 100%;
+    }
+    
+    .twit-content-wrapper {
+        padding-top: 3%;
+    }
+
+    .twit-text {
+        font-size: 18px;
+    }
 }
