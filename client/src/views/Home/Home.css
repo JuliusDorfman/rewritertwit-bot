@@ -52,6 +52,7 @@ Timeline Styles
 
 .tweet-line li {
     display: flex;
+    position: relative;
     justify-content: space-between;
     min-height: 120px;
     list-style: none;
@@ -103,9 +104,9 @@ Timeline Styles
 }
 
 .tweet-date {
-    /* position: absolute;
-    bottom: 0px;
-    padding-bottom: 3%; */
+    position: absolute;
+    top: 0px;
+    font-size: 12px;
 }
 
 .twit-container {

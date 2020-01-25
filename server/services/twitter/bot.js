@@ -134,7 +134,8 @@ function startStream() {
           tweetModel.alteredText = rewrittenArray.join(' ');
           // let cutIndex = tweetDate.indexOf('+');
           // tweetModel.created = tweetDate.substring(0, cutIndex - 1);
-          tweetModel.created = moment().format("MMM Do YYYY, h:mm:ssa");
+          // tweetModel.created = moment().format("MMM Do YYYY, h:mm:ssa");
+          tweetModel.created = moment().format("L h:mma");
           tweetModel.tweetID = tweetID;
           if (rewrittenArray !== tweetText) {
             //

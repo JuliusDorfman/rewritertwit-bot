@@ -76,6 +76,7 @@ Navbar Styles
 
 .call-to-action {
     margin: 0 0 20% 0;
+    padding: 20px;
     font-size: 25px;
     font-weight: bold;
     color: #55ACEE;

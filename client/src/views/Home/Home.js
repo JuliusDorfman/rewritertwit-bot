@@ -120,6 +120,7 @@ class Home extends Component {
                 <ul className='tweet-line'>
                     {this.state.tweets.map((tweets, i) => (
                         <li key={i}>
+                            <div className='tweet-date'>{`${tweets.created}`}</div>
                             <div className='user-container'>
                                 <div className="user-content-wrapper">
                                     <div>

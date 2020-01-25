@@ -6,7 +6,12 @@ This is a Twitter Bot using the following technologies:
 - [Express](http://expressjs.com/) and [Mongoose](http://mongoosejs.com/) for the backend
 - [Sass](http://sass-lang.com/) for styles (using the SCSS syntax)
 - [Webpack](https://webpack.github.io/) for compilation
+- [mLab](https://mlab.com/) - for database hosting
 
+## Libraries
+
+- [twit](https://www.npmjs.com/package/twit) Twitter Library
+- [MeriumWebstersThesaurusAPI] (https://dictionaryapi.com/products/api-collegiate-thesaurus) Synonym Finder
 
 ## Requirements
 
@@ -15,8 +20,6 @@ This is a Twitter Bot using the following technologies:
 ```shell
 npm install
 ```
-
-
 ## Running
 
 Production mode:
