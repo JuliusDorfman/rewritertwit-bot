@@ -3,6 +3,9 @@ import './Home.css';
 import 'whatwg-fetch';
 // import axios from 'axios';
 
+
+
+//TODO: Date format and positioning
 //TODO: stop truncating tweets.
 //TODO: paginate front page. staggard card view.
 //TODO: visual button queue
@@ -124,7 +127,7 @@ class Home extends Component {
                             <div className='user-container'>
                                 <div className="user-content-wrapper">
                                     <div>
-                                        <span className='user-username'>{`${tweets.user}`}</span>&nbsp;<a href={`https://twitter.com/${tweets.user}`} className="user-handle">{`@${tweets.user}`}</a>
+                                        <span className='user-username'>{`${tweets.user}`}</span>&nbsp;<a href={`https://twitter.com/${tweets.user}`} target='_blank' className="user-handle">{`@${tweets.user}`}</a>
                                     </div>
                                     <p className='user-text'>{`"${tweets.text}"`} </p>
                                 </div>
@@ -136,7 +139,7 @@ class Home extends Component {
                                     </div>
                                     <div className="tweet-container">
                                         <div><span className="twit-username">twit-rewriter</span>&nbsp;<span className="handle">@RewriterTwit</span></div>
-                                        <div className="replying-to">replying to <a href={`https://twitter.com/${tweets.user}`}>{`- @${tweets.user}`}</a></div>
+                                        <div className="replying-to">replying to <a href={`https://twitter.com/${tweets.user}`} target='_blank'>{`- @${tweets.user}`}</a></div>
                                         <div className='twit-text'>{`"${tweets.alteredText}"`}</div>
                                     </div>
                                     <button className='dont-bother' onClick={() => this.deleteTweet(i)}>Delete</button>

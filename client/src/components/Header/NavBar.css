@@ -16,14 +16,6 @@
     font-size: 50px;
 }
 
-.header a {
-    color: #0e1111;
-}
-
-.header a:hover {
-    color: white;
-}
-
 .header-content {
     width: 100%;
     display: flex;
@@ -33,17 +25,19 @@
     padding-left: 7%;
 }
 
-.banner-handle a{
-    color: #1B95E0;
+.banner-handle {
+    color: #0e1111;
     font-weight: bold;
     font-size: 19px;
     letter-spacing: 4px;
     text-decoration: none;
+    transition: .2s;
 }
 
-.banner-handle a:hover {
+.banner-handle:hover {
     color: #1B95E0;
-    text-decoration: underline;
+    text-decoration: none;
+    transition: ease-in-out .2s;
 }
 
 .profile-picture-wrapper {

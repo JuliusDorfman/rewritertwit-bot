@@ -105,8 +105,9 @@ Timeline Styles
 
 .tweet-date {
     position: absolute;
-    top: 0px;
+    top: 10px;
     font-size: 12px;
+    font-family: 'Roboto', sans-serif;
 }
 
 .twit-container {
@@ -221,7 +222,7 @@ button.dont-bother:hover {
     }
 
     .tweet-date {
-        top: 0px;
+        top: 10px;
         font-size: smaller;
     }
 
