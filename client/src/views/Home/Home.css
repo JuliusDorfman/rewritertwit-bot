@@ -235,6 +235,11 @@ button.dont-bother:hover {
     }
 
     .twit-text {
-        font-size: 18px;
+        font-size: 15px;
+    }
+
+    .profile-container img {
+        height: 30px;
+        width: initial;
     }
 }

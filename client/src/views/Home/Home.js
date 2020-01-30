@@ -10,6 +10,7 @@ import 'whatwg-fetch';
 //TODO: paginate front page. staggard card view.
 //TODO: visual button queue
 //TODO: MATERICAL DESIGN DEPRESSED ORIGINAL TWEET: RAISED RWRITTEN TWEET BORDERS TO CONVAY 
+//TODO: differentiate between user handles and usernames
 class Home extends Component {
     constructor(props) {
         super(props);
